@@ -1,0 +1,59 @@
+definition-el-form-item(parent, $height = 32px, $marginBottom = 18px, scoped = true, $type = small) {
+  {parent} {
+    if (scoped) {
+      >>>.el-form {
+        .el-form-item {
+          margin-bottom $marginBottom
+        }
+        .el-form-item--{$type} .el-form-item__content, .el-form-item--{$type} .el-form-item__label {
+          line-height $height
+        }
+        .el-input--{$type} .el-input__inner {
+          line-height $height
+          height $height
+        }
+      }
+      >>>.el-input--{$type} .el-input__inner {
+        line-height $height
+        height $height
+      }
+    } else {
+      .el-form {
+        .el-form-item {
+          margin-bottom $marginBottom
+        }
+        .el-form-item--{$type} .el-form-item__content, .el-form-item--{$type} .el-form-item__label {
+          line-height $height
+        }
+        .el-input--{$type} .el-input__inner {
+          line-height $height
+          height $height
+        }
+      }
+      .el-input--{$type} .el-input__inner {
+        line-height $height
+        height $height
+      }
+    }
+  }
+}
+body {
+  .custom-el-textarea {
+    position relative
+    >>>.el-textarea__inner {
+      padding-bottom 20px
+    }
+    & +.custom-el-textarea__show-maxlength {
+      position absolute
+      color #909399
+      font-size 12px
+      right 20px
+      bottom 0px
+    }
+  }
+  .el-form-item.el-form-item--small {
+    .el-form-item__label {
+      word-break break-all
+    }
+  }
+}
